@@ -27,11 +27,17 @@ void old_hello()
       int col = (led_pos % NUM_COLS);
       
       if (mask_mapmatrix[row][col] != -1 ) {
+
+	// set r, g, b value for the pixel position
+
+
+	// old ----------------------------------
         if (pgm_read_byte(&(HELLO_a[frame][led_pos])) == 1) {
           leds[mask_mapmatrix[row][col]] = CRGB ( 255, 255, 0 );
         } else {
           leds[mask_mapmatrix[row][col]] = CRGB ( 0, 0, 0 );
         }
+	------------------------------------------------
       }
     }
    FastLED.show();
